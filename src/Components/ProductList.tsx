@@ -1,16 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Layout/Header";
 import BestSellers from "../Layout/BestSellers";
 import Etwas from "../Layout/Etwas";
 import Footer from "../Layout/Footer";
+import { IProduct } from "../Interfaces/IProduct";
+import { ICategory } from "../Interfaces/ICategory";
 
-type Props = {};
+type Props = {
+  products: IProduct[];
+  categories: ICategory[];
+};
 
-const ProductList = (props: Props) => {
+const ProductList = ({ products, categories }: Props) => {
+  const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(
+    null
+  );
+
+  const handleCategoryChange = (categoryId: number) => {
+    if (selectedCategoryId === categoryId) {
+      setSelectedCategoryId(null); // Deselect if already selected
+    } else {
+      setSelectedCategoryId(categoryId);
+    }
+  };
+
+  const filteredProducts = selectedCategoryId
+    ? products.filter((product) => product.categoryId === selectedCategoryId)
+    : products;
+
+  const bestSellerProducts = products.slice(0, 8);
+
   return (
     <>
       <Header />
-      <div className="h-[200px] bg-lime-200 bg-gradient-to-r from-[rgba(168,238,196,0.6)] to-[rgb(236,239,229)] ">
+      <div className="h-[200px] bg-lime-200 bg-gradient-to-r from-[rgba(168,238,196,0.6)] to-[rgb(236,239,229)]">
         <p className="text-[40px] pt-16 pl-40 font-semibold text-gray-700">
           Töpfe & Behälter
         </p>
@@ -18,38 +41,24 @@ const ProductList = (props: Props) => {
 
       {/* Main Content */}
       <div className="flex flex-wrap mt-10 justify-center">
-        <div className="flex flex-wrap items-center box-shadow border-gray-50 rounded-lg shadow-lg m-4 p-4 bg-lime-50">
-          <img
-            src="../../Ảnh ASM1/htgyr 1.png"
-            alt=""
-            className="rounded-t-lg"
-          />
-          <p className="mt-2 ml-2 text-gray-700">Eckige Töpfe</p>
-        </div>
-        <div className="flex flex-wrap items-center box-shadow border-gray-50 rounded-lg shadow-lg m-4 p-4  bg-lime-50">
-          <img
-            src="../../Ảnh ASM1/hthrt 1.png"
-            alt=""
-            className="rounded-t-lg"
-          />
-          <p className="mt-2 ml-2 text-gray-700">Untersetzer</p>
-        </div>
-        <div className="flex flex-wrap items-center box-shadow border-gray-50 rounded-lg shadow-lg m-4 p-4  bg-lime-50">
-          <img
-            src="../../Ảnh ASM1/dedww 1.png"
-            alt=""
-            className="rounded-t-lg"
-          />
-          <p className="mt-2 ml-2 text-gray-700">Runde Töpfe</p>
-        </div>
-        <div className="flex flex-wrap items-center box-shadow border-gray-50 rounded-lg shadow-lg m-4 p-4  bg-lime-50">
-          <img
-            src="../../Ảnh ASM1/gbfdf 1.png"
-            alt=""
-            className="rounded-t-lg"
-          />
-          <p className="mt-2 ml-2 text-gray-700">Pflanzschalen</p>
-        </div>
+        {categories.map((category) => (
+          <div
+            key={category.id}
+            className={`flex flex-wrap items-center box-shadow border-gray-50 rounded-lg shadow-lg m-4 p-4 bg-lime-50 ${
+              selectedCategoryId === category.id
+                ? "border-2 border-lime-800"
+                : ""
+            }`}
+            onClick={() => handleCategoryChange(category.id)}
+          >
+            <img
+              src="https://i.pinimg.com/474x/2b/e9/8a/2be98a0e6b5411064e9aa8871ecb241b.jpg"
+              alt=""
+              className=" w-[50px] h-[40px]"
+            />
+            <p className="mt-2 ml-2 text-gray-700">{category.name}</p>
+          </div>
+        ))}
       </div>
 
       {/* TIM KIEM */}
@@ -75,38 +84,38 @@ const ProductList = (props: Props) => {
       </div>
 
       {/* SAN PHAM */}
-      <div className="flex w-full mt-10 ">
-        <div className=" flex flex-wrap w-full">
-          <BestSellers />
-          <BestSellers />
+      <div className="flex w-full mt-10">
+        <div className="flex flex-wrap w-[75%]">
+          {filteredProducts.length ? (
+            <BestSellers products={filteredProducts} />
+          ) : (
+            <p className="text-gray-700 text-center w-full mt-10">
+              Không có sản phẩm
+            </p>
+          )}
         </div>
 
-        {/* DANH MUC*/}
+        {/* DANH MUC */}
         <div className="w-[25%] p-4 mr-16">
           <div className="text-center text-lime-950 font-bold text-[25px] mb-4">
             Kategorien
           </div>
           <div className="flex flex-col space-y-2 ml-10">
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              Eckige Töpfe
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              Runde Töpfe
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              Untersetzer
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              Pflanzschalen
-            </label>
+            {categories.map((category) => (
+              <label key={category.id} className="flex items-center">
+                <input
+                  type="checkbox"
+                  className="mr-2"
+                  checked={selectedCategoryId === category.id}
+                  onChange={() => handleCategoryChange(category.id)}
+                />
+                {category.name}
+              </label>
+            ))}
           </div>
           {/* ANH */}
           <div className="w-full p-2 relative">
-            <div className="h-[300px] overflow-hidden  relative">
+            <div className="h-[300px] overflow-hidden relative">
               <img
                 className="h-full w-full object-cover"
                 src="../../Ảnh ASM1/annie-spratt-ncQ2sguVlgo-unsplash 1.png"
@@ -130,7 +139,7 @@ const ProductList = (props: Props) => {
           {/* GIA */}
           <div className="mt-4">
             <div className="">
-              <p className="font-semibold ">Filter By Price</p>
+              <p className="font-semibold">Filter By Price</p>
               <hr className="h-[5px] bg-lime-950 border-5 border-solid border-lime-900 rounded-lg my-2" />
 
               <div className="flex flex-wrap">
@@ -140,7 +149,7 @@ const ProductList = (props: Props) => {
             </div>
 
             <div className="mt-10">
-              <p className="font-semibold ">Filter By Size</p>
+              <p className="font-semibold">Filter By Size</p>
               <hr className="h-[5px] bg-lime-950 border-5 border-solid border-lime-900 rounded-lg my-2" />
 
               <div className="flex flex-wrap">

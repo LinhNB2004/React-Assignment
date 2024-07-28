@@ -35,14 +35,14 @@ function App() {
     (async () => {
       try {
         const productsData = await GetAllProduct();
-        console.log("Products Data:", productsData); // Log để kiểm tra dữ liệu
+        console.log("Products Data:", productsData);
         setProducts(productsData);
 
         const categoriesData = await GetAllCategories();
-        console.log("Categories Data:", categoriesData); // Log để kiểm tra dữ liệu
+        console.log("Categories Data:", categoriesData);
         setCategories(categoriesData);
       } catch (error) {
-        console.error("API Fetch Error:", error); // Log lỗi nếu có
+        console.error("API Fetch Error:", error);
       }
     })();
   }, []);
@@ -102,7 +102,7 @@ function App() {
   // ADD CATEGORY
   const onAddCategory = async (data: FormCategory) => {
     try {
-      const newCategory = await AddCategoryService(data); // Thêm log cho category mới
+      const newCategory = await AddCategoryService(data);
       alert("Thêm danh mục thành công");
       setCategories([...categories, newCategory]);
       navigate("/admin/category-list");
@@ -142,9 +142,16 @@ function App() {
   };
 
   const routes = useRoutes([
-    { path: "home", element: <HomePage /> },
-    { path: "product-list", element: <ProductList /> },
-    { path: "product-detail", element: <ProductDetail /> },
+    { path: "/", element: <HomePage products={products} /> }, // Truyền danh sách sản phẩm vào HomePage
+    { path: "home", element: <HomePage products={products} /> },
+    {
+      path: "product-list",
+      element: <ProductList products={products} categories={categories} />,
+    },
+    {
+      path: "product-detail/:id",
+      element: <ProductDetail products={products} />,
+    },
     {
       path: "admin",
       element: <LayoutAdmin />,

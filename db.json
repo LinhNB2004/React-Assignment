@@ -9,14 +9,6 @@
       "name": "Giày dép"
     },
     {
-      "id": 3,
-      "name": "Điện tử"
-    },
-    {
-      "id": 4,
-      "name": "Nội thất"
-    },
-    {
       "id": 5,
       "name": "Thú cưng"
     },
@@ -25,12 +17,12 @@
       "id": 6
     },
     {
-      "name": "LÊ THỊ THÙY LINH",
-      "id": 7
+      "id": 4,
+      "name": "Nội thất"
     },
     {
-      "name": "Rèm che ban thờ 66",
-      "id": 8
+      "name": "Đồ Công Nghệ",
+      "id": 3
     }
   ],
   "products": [
@@ -110,6 +102,55 @@
       "price": 900000,
       "categoryId": 6,
       "id": 12
+    },
+    {
+      "title": "Gương xinh dính tường",
+      "image": "https://i.pinimg.com/474x/f8/0b/37/f80b376ae99727a68723bb6d140ae41e.jpg",
+      "price": "4000000",
+      "categoryId": 4,
+      "id": 13
+    },
+    {
+      "title": "Đệm 4 mùa ",
+      "image": "https://i.pinimg.com/474x/51/90/53/519053db153d211586039358de7f49dc.jpg",
+      "price": 9999,
+      "categoryId": 4,
+      "id": 14
+    },
+    {
+      "title": "IPad Pro",
+      "image": "https://i.pinimg.com/474x/c5/e9/2c/c5e92c6881bb107cd2bc566d74d69e47.jpg",
+      "price": "50000",
+      "categoryId": 3,
+      "id": 15
+    },
+    {
+      "title": "Tai nghe",
+      "image": "https://i.pinimg.com/474x/26/fb/89/26fb89e5a8da4dd7b2324325a86ee55d.jpg",
+      "price": "6444",
+      "categoryId": 3,
+      "id": 16
+    },
+    {
+      "title": "Dép đế bệt",
+      "image": "https://i.pinimg.com/474x/56/4f/0d/564f0de8a209626292fcb6a6662f6f1f.jpg",
+      "price": "44322",
+      "categoryId": 2,
+      "id": 17
+    },
+    {
+      "title": "Guốc nữ ",
+      "image": "https://i.pinimg.com/474x/03/ac/32/03ac32af442321ef3e27b09d0b9868c1.jpg",
+      "price": "667788",
+      "categoryId": 2,
+      "id": 18
+    },
+    {
+      "title": "Dép đi trong nhà",
+      "image": "https://i.pinimg.com/474x/19/30/75/1930757e1162a225429561df64a567db.jpg",
+      "price": "77777",
+      "categoryId": 2,
+      "id": 19
     }
   ]
 }

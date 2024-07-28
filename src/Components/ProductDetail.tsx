@@ -2,10 +2,20 @@ import React from "react";
 import Header from "../Layout/Header";
 import Etwas from "../Layout/Etwas";
 import Footer from "../Layout/Footer";
+import { IProduct } from "../Interfaces/IProduct";
+import { useParams } from "react-router-dom";
 
-type Props = {};
+type Props = {
+  products: IProduct[];
+};
 
-const ProductDetail = (props: Props) => {
+const ProductDetail = ({ products }: Props) => {
+  const { id } = useParams<{ id: string }>();
+  const product = products.find((p) => p.id === parseInt(id!));
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
   return (
     <>
       <Header />
@@ -15,31 +25,31 @@ const ProductDetail = (props: Props) => {
           <div className="w-full md:w-1/2 p-4">
             <div className="flex flex-col items-center">
               <img
-                src="../../Ảnh ASM1/vsd 1.png"
-                alt="Large Product"
-                className="w-[40%] mb-4 rounded-lg"
+                src={product.image}
+                alt={product.title}
+                className="w-[70%] mb-4 rounded-lg"
               />
 
               <div className="flex ml-24 space-x-4">
                 <div className="border-2 w-[20%] h-[20%] border-black rounded-lg">
                   <img
-                    src="../../Ảnh ASM1/gfree 1.png"
-                    alt="Small Product 1"
+                    src={product.image}
+                    alt={product.title}
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
                 <div className="w-[20%] h-[20%]">
                   <img
-                    src="../../Ảnh ASM1/gfree 1.png"
-                    alt="Small Product 2"
+                    src={product.image}
+                    alt={product.title}
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
 
                 <div className="w-[20%] h-[20%]">
                   <img
-                    src="../../Ảnh ASM1/gfree 1.png"
-                    alt="Small Product 3"
+                    src={product.image}
+                    alt={product.title}
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
@@ -52,7 +62,7 @@ const ProductDetail = (props: Props) => {
             <div className="space-y-4">
               <p className="text-lime-900">PLANT</p>
               <h2 className="text-3xl font-bold text-gray-800">
-                Square cultivation pots 0.27 to 2 litres
+                {product.title}
               </h2>
               <p className="text-gray-700">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -60,7 +70,9 @@ const ProductDetail = (props: Props) => {
                 text ever since the
               </p>
               <div className="flex flex-wrap">
-                <p className="text-[25px] font-bold text-black">$125.00</p>
+                <p className="text-[25px] font-bold text-black">
+                  ${product.price}
+                </p>
                 <button className="bg-orange-200 ml-10 px-2 border-5  rounded-lg ">
                   -50%
                 </button>

@@ -12,7 +12,7 @@ const LayoutAdmin = (props: Props) => {
         </header>
 
         <div className="flex flex-wrap">
-          <ul className="w-[20%] h-[1500px] bg-slate-100">
+          <ul className="w-[20%] h-[2000px] bg-slate-100">
             <li className="p-3 font-bold hover:bg-gray-300 hover: m-3 hover: rounded-md ">
               <NavLink to={"/admin"}>
                 <i className="fa-solid fa-house"></i> Dashboard
