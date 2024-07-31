@@ -41,6 +41,18 @@ const AddCategory = ({ onAdd }: Props) => {
             Tên danh mục không được để trống và nhỏ hơn 3 ký tự
           </p>
         )}
+
+        <input
+          type="text"
+          {...register("image", { required: true, minLength: 10 })}
+          placeholder="Ảnh danh mục"
+          className="p-3"
+        />
+        {errors.image && (
+          <p className="text-red-600 text-[12px]">
+            Ảnh không được để trống và nhỏ hơn 10 ký tự
+          </p>
+        )}
         <button
           className="bg-violet-700 w-[25%] p-3 text-white font-bold ml-[40%]"
           type="submit"

@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (keyword.trim()) {
+      navigate(`/search?keyword=${encodeURIComponent(keyword.trim())}`);
+    }
+  };
+
   return (
     <header className="relative z-10 bg-lime-700 bg-gradient-to-r from-[rgba(19,83,8,0.39)] to-[rgba(197,201,189,0.79)] w-full ">
       <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-4 lg:px-8">
         {/* Search  */}
-        <div className="flex-1 mx-40 relative">
+        <form onSubmit={handleSearch} className="flex-1 mx-40 relative">
           <input
             type="text"
+            value={keyword}
+            onChange={(e) => setKeyword(e.target.value)}
             className="w-full p-2 pr-10 rounded text-xs"
             placeholder="Suchen Sie nach Produkten, Marken und mehr"
           />
-          <i className="fa-solid fa-magnifying-glass absolute right-2 top-1/2 transform -translate-y-1/2"></i>
-        </div>
+          <button
+            type="submit"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2"
+          >
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
         {/* EN, Account, and Cart */}
         <div className="flex space-x-4 items-center text-white">
           <div className="flex items-center space-x-2">

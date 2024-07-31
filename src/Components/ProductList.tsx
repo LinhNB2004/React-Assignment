@@ -28,8 +28,6 @@ const ProductList = ({ products, categories }: Props) => {
     ? products.filter((product) => product.categoryId === selectedCategoryId)
     : products;
 
-  const bestSellerProducts = products.slice(0, 8);
-
   return (
     <>
       <Header />
@@ -52,9 +50,9 @@ const ProductList = ({ products, categories }: Props) => {
             onClick={() => handleCategoryChange(category.id)}
           >
             <img
-              src="https://i.pinimg.com/474x/2b/e9/8a/2be98a0e6b5411064e9aa8871ecb241b.jpg"
-              alt=""
-              className=" w-[50px] h-[40px]"
+              src={category.image}
+              alt={category.image}
+              className="w-[50px] h-[40px]"
             />
             <p className="mt-2 ml-2 text-gray-700">{category.name}</p>
           </div>
@@ -87,7 +85,7 @@ const ProductList = ({ products, categories }: Props) => {
       <div className="flex w-full mt-10">
         <div className="flex flex-wrap w-[75%]">
           {filteredProducts.length ? (
-            <BestSellers products={filteredProducts} />
+            <BestSellers products={filteredProducts} categories={categories} />
           ) : (
             <p className="text-gray-700 text-center w-full mt-10">
               Không có sản phẩm
@@ -138,20 +136,17 @@ const ProductList = ({ products, categories }: Props) => {
           </div>
           {/* GIA */}
           <div className="mt-4">
-            <div className="">
+            <div>
               <p className="font-semibold">Filter By Price</p>
               <hr className="h-[5px] bg-lime-950 border-5 border-solid border-lime-900 rounded-lg my-2" />
-
               <div className="flex flex-wrap">
                 <p>From $0 to $8000</p>
                 <span className="ml-12">Filter</span>
               </div>
             </div>
-
             <div className="mt-10">
               <p className="font-semibold">Filter By Size</p>
               <hr className="h-[5px] bg-lime-950 border-5 border-solid border-lime-900 rounded-lg my-2" />
-
               <div className="flex flex-wrap">
                 <p>2 mm by 50</p>
                 <span className="ml-[90px]">Filter</span>

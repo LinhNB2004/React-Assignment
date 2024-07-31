@@ -23,6 +23,9 @@ const CategoryList = ({ categories, onDelete }: Props) => {
               Tên danh mục
             </th>
             <th className="w-1/3 py-3 px-4 uppercase font-semibold text-sm">
+              Ảnh danh mục
+            </th>
+            <th className="w-1/3 py-3 px-4 uppercase font-semibold text-sm">
               Hành động
             </th>
           </tr>
@@ -33,6 +36,10 @@ const CategoryList = ({ categories, onDelete }: Props) => {
               <td className="w-1/3 py-3 px-4">{category.id}</td>
               <td className="w-1/3 py-3 px-4">{category.name}</td>
               <td className="w-1/3 py-3 px-4">
+                <img src={category.image} alt={category.name} width={100} />
+              </td>
+
+              <td className="w-1/3 py-3 px-4 flex flex-row">
                 <Link
                   to={`/admin/category-edit/${category.id}`}
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"

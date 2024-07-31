@@ -6,14 +6,16 @@ import Kategorien from "../Layout/Kategorien";
 import Etwas from "../Layout/Etwas";
 import Footer from "../Layout/Footer";
 import { IProduct } from "../Interfaces/IProduct";
+import { ICategory } from "../Interfaces/ICategory";
 import ImageLayout from "../Layout/ImageLayout ";
 import { Link } from "react-router-dom";
 
 type Props = {
   products: IProduct[];
+  categories: ICategory[];
 };
 
-const HomePage = ({ products }: Props) => {
+const HomePage = ({ products, categories }: Props) => {
   const bestSellerProducts = products.slice(0, 4);
 
   return (
@@ -22,14 +24,14 @@ const HomePage = ({ products }: Props) => {
         <Header />
         <Banner />
         <h2 className="text-2xl font-bold ml-20 mt-4 mb-2">
-          <Link to={"/product-list"}>ProductList</Link>
+          <Link to={"/product-list"}>Best Sellers</Link>
         </h2>
         <hr className="bg-orange-900 mb-2" />
-        <BestSellers products={bestSellerProducts} />
+        <BestSellers products={bestSellerProducts} categories={categories} />
         <ImageLayout />
         <h2 className="text-2xl font-bold ml-20 mt-4 mb-2">Kategorien</h2>
         <hr className="bg-orange-900 mb-2" />
-        <Kategorien />
+        <Kategorien products={products} categories={categories} />
         <Etwas />
         <Footer />
       </div>

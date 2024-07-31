@@ -1,12 +1,20 @@
 import React from "react";
 import { IProduct } from "../Interfaces/IProduct";
 import { Link } from "react-router-dom";
+import { ICategory } from "../Interfaces/ICategory";
 
 type Props = {
   products: IProduct[];
+  categories: ICategory[]; // Thêm prop categories để chứa danh sách các danh mục
 };
 
-const BestSellers = ({ products }: Props) => {
+const BestSellers = ({ products, categories }: Props) => {
+  // Hàm để lấy tên danh mục dựa trên categoryId
+  const getCategoryName = (categoryId: number) => {
+    const category = categories.find((cat) => cat.id === categoryId);
+    return category ? category.name : "Không rõ danh mục";
+  };
+
   return (
     <div className="w-full p-4 bg-white">
       <div className="flex flex-wrap justify-between ml-20 mr-20">
@@ -14,7 +22,7 @@ const BestSellers = ({ products }: Props) => {
           <div
             key={product.id}
             className={`w-[23%] p-2 relative ${
-              index % 4 !== 3 ? "mr-4" : "" // Add margin-right to all but the last item in the row
+              index % 4 !== 3 ? "mr-4" : "" // Thêm margin-right cho tất cả trừ mục cuối cùng trong hàng
             }`}
           >
             <Link to={`/product-detail/${product.id}`}>
@@ -30,7 +38,10 @@ const BestSellers = ({ products }: Props) => {
               {product.title}
             </h3>
             <div className="flex justify-between px-4 pb-2">
-              <span className="text-[#777777] text-[12px]">$50000</span>
+              <span className="text-[#777777] text-[12px]">
+                {getCategoryName(product.categoryId)}
+              </span>{" "}
+              {/* Hiển thị tên danh mục */}
               <span className="text-[13px]">${product.price}</span>
             </div>
           </div>
