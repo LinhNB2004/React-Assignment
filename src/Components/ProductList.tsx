@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Layout/Header";
 import BestSellers from "../Layout/BestSellers";
 import Etwas from "../Layout/Etwas";
 import Footer from "../Layout/Footer";
 import { IProduct } from "../Interfaces/IProduct";
 import { ICategory } from "../Interfaces/ICategory";
+import { useLocation } from "react-router-dom";
 
 type Props = {
   products: IProduct[];
@@ -12,13 +13,22 @@ type Props = {
 };
 
 const ProductList = ({ products, categories }: Props) => {
+  const location = useLocation();
   const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(
     null
   );
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const categoryId = params.get("categoryId");
+    if (categoryId) {
+      setSelectedCategoryId(parseInt(categoryId));
+    }
+  }, [location]);
+
   const handleCategoryChange = (categoryId: number) => {
     if (selectedCategoryId === categoryId) {
-      setSelectedCategoryId(null); // Deselect if already selected
+      setSelectedCategoryId(null);
     } else {
       setSelectedCategoryId(categoryId);
     }
@@ -33,11 +43,10 @@ const ProductList = ({ products, categories }: Props) => {
       <Header />
       <div className="h-[200px] bg-lime-200 bg-gradient-to-r from-[rgba(168,238,196,0.6)] to-[rgb(236,239,229)]">
         <p className="text-[40px] pt-16 pl-40 font-semibold text-gray-700">
-          Töpfe & Behälter
+          Sản Phẩm
         </p>
       </div>
 
-      {/* Main Content */}
       <div className="flex flex-wrap mt-10 justify-center">
         {categories.map((category) => (
           <div
@@ -59,7 +68,6 @@ const ProductList = ({ products, categories }: Props) => {
         ))}
       </div>
 
-      {/* TIM KIEM */}
       <div className="flex justify-between w-[40%] items-center px-10 py-4 ml-20 mt-10">
         <div className="flex items-center">
           <p className="mr-2">Sort By :</p>
@@ -81,7 +89,6 @@ const ProductList = ({ products, categories }: Props) => {
         </div>
       </div>
 
-      {/* SAN PHAM */}
       <div className="flex w-full mt-10">
         <div className="flex flex-wrap w-[75%]">
           {filteredProducts.length ? (
@@ -93,10 +100,9 @@ const ProductList = ({ products, categories }: Props) => {
           )}
         </div>
 
-        {/* DANH MUC */}
         <div className="w-[25%] p-4 mr-16">
           <div className="text-center text-lime-950 font-bold text-[25px] mb-4">
-            Kategorien
+            Danh mục sản phẩm
           </div>
           <div className="flex flex-col space-y-2 ml-10">
             {categories.map((category) => (
@@ -111,7 +117,6 @@ const ProductList = ({ products, categories }: Props) => {
               </label>
             ))}
           </div>
-          {/* ANH */}
           <div className="w-full p-2 relative">
             <div className="h-[300px] overflow-hidden relative">
               <img
@@ -119,9 +124,7 @@ const ProductList = ({ products, categories }: Props) => {
                 src="../../Ảnh ASM1/annie-spratt-ncQ2sguVlgo-unsplash 1.png"
                 alt="Product 4"
               />
-              {/* Black overlay */}
               <div className="absolute inset-0 bg-black opacity-30 rounded-lg"></div>
-              {/* Title and description */}
               <div className="absolute ml-2 inset-0 flex flex-col justify-between p-4">
                 <div className="flex flex-col justify-end">
                   <p className="text-[#ffffff] font-semibold text-[20px] mt-1">
@@ -134,7 +137,6 @@ const ProductList = ({ products, categories }: Props) => {
               </div>
             </div>
           </div>
-          {/* GIA */}
           <div className="mt-4">
             <div>
               <p className="font-semibold">Filter By Price</p>

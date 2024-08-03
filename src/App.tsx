@@ -27,6 +27,9 @@ import {
   EditCategory as EditCategoryService,
 } from "./Service/Category";
 import { Add, DeleteProduct, UpdateProduct } from "./Service/Product";
+import Register from "./Components/Register";
+import Login from "./Components/Login";
+import Privateroute from "./Privateroute";
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -170,7 +173,11 @@ function App() {
     },
     {
       path: "admin",
-      element: <LayoutAdmin />,
+      element: (
+        <Privateroute>
+          <LayoutAdmin />
+        </Privateroute>
+      ),
       children: [
         {
           path: "",
@@ -214,6 +221,8 @@ function App() {
         },
       ],
     },
+    { path: "register", Component: Register },
+    { path: "login", Component: Login },
   ]);
 
   return routes;

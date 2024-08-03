@@ -50,15 +50,15 @@ const Banner = (props: Props) => {
             />
             <div className="absolute top-1/2 left-36 transform -translate-y-1/2 font-baloo">
               <h2 className="text-5xl font-bold font-baloo w-[60%]  text-lime-950">
-                Wir kümmern uns um Ihre schöner Garten und Haus
+                Chúng tôi chăm sóc khu vườn và ngôi nhà xinh đẹp của bạn
               </h2>
               <p className="mt-4 w-[40%] text-yellow-900 font-mono">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s.
+                Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp
+                chữ. Lorem Ipsum đã trở thành văn bản tiêu chuẩn của các ngành
+                kể từ những năm 1500.
               </p>
               <button className="mt-6 px-8 py-2 text-lime-950 rounded border-2 border-lime-950">
-                Lern mehr
+                Đọc thêm
               </button>
             </div>
           </div>
@@ -71,15 +71,15 @@ const Banner = (props: Props) => {
             />
             <div className="absolute top-1/2 left-36 transform -translate-y-1/2 font-baloo">
               <h2 className="text-5xl font-bold font-baloo w-[60%]  text-lime-950">
-                Wir kümmern uns um Ihre schöner Garten und Haus
+                Chúng tôi chăm sóc khu vườn và ngôi nhà xinh đẹp của bạn
               </h2>
               <p className="mt-4 w-[40%] text-yellow-900 font-mono">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s.
+                Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp
+                chữ. Lorem Ipsum đã trở thành văn bản tiêu chuẩn của các ngành
+                kể từ những năm 1500.
               </p>
               <button className="mt-6 px-8 py-2 text-lime-950 rounded border-2 border-lime-950">
-                Lern mehr
+                Đọc thêm
               </button>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { ICategory } from "../Interfaces/ICategory";
 import { IProduct } from "../Interfaces/IProduct";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 type Props = {
   categories: ICategory[];
@@ -9,25 +9,34 @@ type Props = {
 };
 
 const Kategorien = ({ categories, products }: Props) => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (categoryId: number) => {
+    navigate(`/product-list?categoryId=${categoryId}`);
+  };
+
   return (
     <>
       <div className="w-full p-4">
         <div className="flex flex-wrap justify-between ml-20 mr-20">
           {categories.map((category) => {
-            // Tính số lượng sản phẩm trong danh mục
-            const itemCount = products.filter(product => product.categoryId === category.id).length;
+            const itemCount = products.filter(
+              (product) => product.categoryId === category.id
+            ).length;
 
             return (
-              <div key={category.id} className="w-1/4 p-2 relative">
+              <div
+                key={category.id}
+                className="w-1/4 p-2 relative cursor-pointer"
+                onClick={() => handleCategoryClick(category.id)}
+              >
                 <div className="h-[300px] overflow-hidden border-1 border-gray-50 rounded-lg relative">
                   <img
                     className="h-full w-full object-cover"
-                    src={category.image} // Đảm bảo rằng category.image chứa đường dẫn đến ảnh
+                    src={category.image}
                     alt={category.name}
                   />
-                  {/* Black overlay */}
                   <div className="absolute inset-0 bg-black opacity-30 rounded-lg"></div>
-                  {/* Title and description */}
                   <div className="absolute ml-32 inset-0 flex flex-col justify-between p-4">
                     <div className="flex flex-col justify-end">
                       <p className="text-[#ffffff] font-semibold text-[14px] mt-1">

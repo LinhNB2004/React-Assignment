@@ -1,14 +1,28 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 type Props = {};
 
 const LayoutAdmin = (props: Props) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("user");
+    alert("Đăng xuất thành công");
+    navigate("/login");
+  };
+
   return (
     <>
       <div>
-        <header className="h-[50px] bg-black  text-white ">
-          <h1 className="pl-2 pt-2">Hello Admin</h1>
+        <header className="h-[50px] bg-black text-white flex justify-between items-center">
+          <h1 className="pl-2">Hello Admin</h1>
+          <button
+            onClick={handleLogout}
+            className="mr-2 p-2 bg-red-600 text-white rounded"
+          >
+            Logout
+          </button>
         </header>
 
         <div className="flex flex-wrap">
@@ -34,7 +48,7 @@ const LayoutAdmin = (props: Props) => {
               </NavLink>
             </li>
           </ul>
-          <div className="col-9 w-[80%] ">
+          <div className="col-9 w-[80%]">
             <Outlet />
           </div>
         </div>

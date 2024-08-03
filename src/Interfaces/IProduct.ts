@@ -5,9 +5,11 @@ export interface IProduct {
   price: number;
   image: string;
   categoryId: number;
+  motangan: string;
+  motadai: string;
 }
 
 export type FormData = Pick<
   IProduct,
-  "title" | "price" | "image" | "categoryId"
+  "title" | "price" | "image" | "categoryId" | "motangan" | "motadai"
 >;

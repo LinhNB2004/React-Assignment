@@ -26,6 +26,8 @@ const EditProduct = ({ onUpdate, categories, products }: Props) => {
         title: product.title,
         image: product.image,
         price: product.price,
+        motangan: product.motangan,
+        motadai: product.motadai,
         categoryId: product.categoryId,
       });
     }
@@ -69,6 +71,29 @@ const EditProduct = ({ onUpdate, categories, products }: Props) => {
         {errors.image && (
           <p className="text-red-600 text-[12px]">
             Ảnh không được để trống và nhỏ hơn 10 ký tự
+          </p>
+        )}
+        <input
+          type="text"
+          {...register("motangan", { required: true, minLength: 6 })}
+          placeholder="Mô tả ngắn "
+          className="p-3"
+        />
+        {errors.motangan && (
+          <p className="text-red-600 text-[12px]">
+            không được để trống và nhỏ hơn 6 ký tự
+          </p>
+        )}
+
+        <input
+          type="text"
+          {...register("motadai", { required: true, minLength: 6 })}
+          placeholder="Mô tả dài"
+          className="p-3"
+        />
+        {errors.motadai && (
+          <p className="text-red-600 text-[12px]">
+            không được để trống và nhỏ hơn 6 ký tự
           </p>
         )}
         <input

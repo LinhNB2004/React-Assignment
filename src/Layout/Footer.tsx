@@ -9,9 +9,10 @@ const Footer = (props: Props) => {
         <div className="flex flex-wrap justify-between">
           {/* Column 1 */}
           <div className="w-full sm:w-1/4 mb-4 sm:mb-0">
-            <h3 className="text-[12px]   mt-10">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
+            <h3 className="text-[12px]   mt-10 pr-[20px]">
+              Điều quan trọng là phải chăm sóc bệnh nhân, được bệnh nhân theo
+              dõi, nhưng điều đó sẽ xảy ra vào thời điểm có rất nhiều công việc
+              và đau đớn.
             </h3>
 
             <ul className="flex flex-wrap ">
@@ -35,26 +36,26 @@ const Footer = (props: Props) => {
 
           {/* Column 2 */}
           <div className="w-full sm:w-1/4 mb-4 sm:mb-0">
-            <h3 className="text-lg font-semibold mb-4">Um</h3>
+            <h3 className="text-lg font-semibold mb-4">Chúng tôi</h3>
             <ul>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Kontaktiere uns
+                  Liên hệ chúng tôi
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Über uns
+                  Về chúng tôi
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Karriere
+                  Sự nghiệp
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Unternehmensinformationen
+                  Thông tin công ty
                 </a>
               </li>
             </ul>
@@ -62,32 +63,32 @@ const Footer = (props: Props) => {
 
           {/* Column 3 */}
           <div className="w-full sm:w-1/4 mb-4 sm:mb-0">
-            <h3 className="text-lg font-semibold mb-4">Hilfe</h3>
+            <h3 className="text-lg font-semibold mb-4">Giúp đỡ</h3>
             <ul>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Unsere Produzenten
+                  Nhà sản xuất của chúng tôi
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Zahlung
+                  Sự chi trả
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Versand
+                  Lô hàng
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Stornierung & Rückgabe
+                  Hủy & Trả hàng
                 </a>
               </li>
 
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Verstoß melden
+                  Báo cáo vi phạm
                 </a>
               </li>
             </ul>
@@ -95,21 +96,21 @@ const Footer = (props: Props) => {
 
           {/* Column 4 */}
           <div className="w-full sm:w-1/4 mb-4 sm:mb-0">
-            <h3 className="text-lg font-semibold mb-4">pOLITIK</h3>
+            <h3 className="text-lg font-semibold mb-4">Chính trị</h3>
             <ul>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  Rücknahmegarantie
+                  Đảm bảo hoàn trả
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  ffhhhhhhff
+                  Điều khoản sử dụng
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline text-[12px]">
-                  eeewfhjjjkkk
+                  Thư mục trang
                 </a>
               </li>
             </ul>

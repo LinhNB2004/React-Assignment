@@ -32,6 +32,7 @@ const Dashboard = ({ products, categories, onDel }: Props) => {
             <th className="w-1/3 py-3 px-4 uppercase font-semibold text-sm">
               Giá{" "}
             </th>
+            
             <th className="w-1/3 py-3 px-4 uppercase font-semibold text-sm">
               Danh mục
             </th>

@@ -8,20 +8,20 @@ const Etwas = (props: Props) => {
       <div className="w-full p-4 flex items-center justify-between">
         {/* Content Text */}
         <div className="flex-grow ml-60 mt-10">
-          <p className=" text-[40px] font-semibold text-gray-700">
-            Etwas abonnieren
+          <p className=" text-[35px] font-semibold text-gray-700">
+            Đăng ký một cái gì đó
           </p>
-          <p className="text-[40px] font-semibold text-gray-700">
-            _Unser Newsletter{" "}
+          <p className="text-[35px] font-semibold text-gray-700">
+            _Bản tin của chúng tôi{" "}
           </p>
           <p className="mt-4 ml-14 text-[15px] w-[60%] text-yellow-900 font-mono">
-            Get weekly update about our product on your email, no spam
-            guaranteed we promise ✌️
+            Nhận thông tin cập nhật hàng tuần về sản phẩm của chúng tôi qua
+            email của bạn, đảm bảo không có thư rác, chúng tôi hứa ✌️
           </p>
         </div>
 
         {/* Email Input */}
-        <div className="relative flex-shrink-0 mt-40 mr-[17%]">
+        <div className="relative flex-shrink-0 mt-40 mr-[17%] mb-[50px]">
           <input
             type="email"
             placeholder="youremail123@gmail.com"
@@ -32,7 +32,7 @@ const Etwas = (props: Props) => {
             className="absolute mt-8 right-0  h-full bg-stone-600 text-white px-4 py-2 "
             type="submit"
           >
-            ABONNIEREN
+            Đăng Kí
           </button>
         </div>
       </div>

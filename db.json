@@ -47,42 +47,54 @@
       "image": "https://i.pinimg.com/474x/b2/98/37/b298372dff472028a6918df21a3a634b.jpg",
       "price": 888,
       "categoryId": 1,
-      "id": 1
+      "id": 1,
+      "motangan": "Áo phông là loại trang phục phổ biến, có kiểu dáng đơn giản với thiết kế không cổ và tay ngắn. Thường được làm từ vải cotton hoặc polyester, áo phông mang lại cảm giác thoải mái và thoáng mát cho người mặc. ",
+      "motadai": "Áo phông, còn được gọi là T-shirt, là một trong những loại trang phục phổ biến và đa năng nhất trên thế giới. Đặc điểm dễ nhận biết của áo phông là thiết kế không cổ, tay ngắn và form dáng thoải mái. Được làm từ nhiều chất liệu khác nhau, nhưng phổ biến nhất vẫn là vải cotton vì tính thấm hút mồ hôi tốt và cảm giác mềm mại trên da. Một số loại áo phông khác có thể được làm từ polyester hoặc các loại vải pha trộn để tăng độ bền và tính năng động."
     },
     {
       "title": "Quần jeans nữ",
       "image": "https://i.pinimg.com/474x/6f/0f/fb/6f0ffb5ef1c0a88464d10961ef781aae.jpg",
       "price": 450000,
       "categoryId": 1,
-      "id": 2
+      "id": 2,
+      "motangan": "Áo phông là loại trang phục phổ biến, có kiểu dáng đơn giản với thiết kế không cổ và tay ngắn. Thường được làm từ vải cotton hoặc polyester, áo phông mang lại cảm giác thoải mái và thoáng mát cho người mặc. ",
+      "motadai": "Áo phông, còn được gọi là T-shirt, là một trong những loại trang phục phổ biến và đa năng nhất trên thế giới. Đặc điểm dễ nhận biết của áo phông là thiết kế không cổ, tay ngắn và form dáng thoải mái. Được làm từ nhiều chất liệu khác nhau, nhưng phổ biến nhất vẫn là vải cotton vì tính thấm hút mồ hôi tốt và cảm giác mềm mại trên da. Một số loại áo phông khác có thể được làm từ polyester hoặc các loại vải pha trộn để tăng độ bền và tính năng động."
     },
     {
       "id": 3,
       "title": "Giày",
       "price": 800000,
       "image": "https://i.pinimg.com/474x/d4/4b/fa/d44bfa9162e582fc178ff64a27d08732.jpg",
-      "categoryId": 2
+      "categoryId": 2,
+      "motangan": "Giày Thể Thao Nam Nike Air Max 270 ",
+      "motadai": "Giày Thể Thao Nam Nike Air Max 270 được thiết kế để mang lại sự thoải mái tối đa và phong cách hiện đại. Với công nghệ đệm khí đặc trưng Air Max, đôi giày này không chỉ hỗ trợ tối đa cho các hoạt động thể thao mà còn phù hợp cho việc dạo phố hàng ngày.."
     },
     {
       "id": 4,
       "title": "Điện thoại di động",
       "price": 12000000,
       "image": "https://i.pinimg.com/474x/56/f8/78/56f8789aa803d1c1b4b6cfeb6557fd0e.jpg",
-      "categoryId": 3
+      "categoryId": 3,
+      "motangan": "Giày Thể Thao Nam Nike Air Max 270 ",
+      "motadai": "Giày Thể Thao Nam Nike Air Max 270 được thiết kế để mang lại sự thoải mái tối đa và phong cách hiện đại. ."
     },
     {
       "id": 5,
       "title": "Bàn làm việc",
       "price": 1500000,
       "image": "https://i.pinimg.com/474x/36/ca/4d/36ca4d3665091d94c21b7d3c91611c3e.jpg",
-      "categoryId": 4
+      "categoryId": 4,
+      "motangan": "Áo phông là loại trang phục phổ biến, có kiểu dáng đơn giản với thiết kế không cổ và tay ngắn. ",
+      "motadai": "Áo phông, còn được gọi là T-shirt, là một trong những loại trang phục phổ biến và đa năng nhất trên thế giới. Đặc điểm dễ nhận biết của áo phông là thiết kế không cổ, tay ngắn và form dáng thoải mái. Được làm từ nhiều chất liệu khác nhau, nhưng phổ biến nhất vẫn là vải cotton vì tính thấm hút mồ hôi tốt và cảm giác mềm mại trên da. "
     },
     {
       "id": 6,
       "title": "Máy ảnh DSLR",
       "price": 3500000,
       "image": "https://i.pinimg.com/474x/dd/19/96/dd19963873e98f76e9d2e3afe2b33cbf.jpg",
-      "categoryId": 3
+      "categoryId": 3,
+      "motangan": "Áo phông là loại trang phục phổ biến, có kiểu dáng đơn giản với thiết kế không cổ và tay ngắn. Thường được làm từ vải cotton hoặc polyester, áo phông mang lại cảm giác thoải mái và thoáng mát cho người mặc. ",
+      "motadai": "Áo phông, còn được gọi là T-shirt, là một trong những loại trang phục phổ biến và đa năng nhất trên thế giới. Đặc điểm dễ nhận biết của áo phông là thiết kế không cổ, tay ngắn và form dáng thoải mái. Được làm từ nhiều chất liệu khác nhau, nhưng phổ biến nhất vẫn là vải cotton vì tính thấm hút mồ hôi tốt và cảm giác mềm mại trên da. Một số loại áo phông khác có thể được làm từ polyester hoặc các loại vải pha trộn để tăng độ bền và tính năng động."
     },
     {
       "id": 7,
@@ -174,6 +186,27 @@
       "price": 99999,
       "categoryId": 7,
       "id": 20
+    },
+    {
+      "title": "hhhk555",
+      "image": "https://i.pinimg.com/474x/b2/98/37/b298372dff472028a6918df21a3a634b.jpg",
+      "price": 44,
+      "motangan": "jjjjjjjjjjjjjj",
+      "motadai": "jtttttttttttttttttttttttt",
+      "categoryId": 2,
+      "id": 21
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "llll",
+      "password": "gggg"
+    },
+    {
+      "email": "linhlttph37534@fpt.edu.vn",
+      "password": "$2a$10$oEu/TfTPjYSKKV2SMMMBMu0IXGakbbm4zjLufh4Bl9UH9PJL/hD/q",
+      "id": 2
     }
   ]
 }

@@ -64,6 +64,29 @@ const AddProduct = ({ onAdd, categories }: Props) => {
         )}
         <input
           type="text"
+          {...register("motangan", { required: true, minLength: 6 })}
+          placeholder="Mô tả ngắn "
+          className="p-3"
+        />
+        {errors.motangan && (
+          <p className="text-red-600 text-[12px]">
+            không được để trống và nhỏ hơn 6 ký tự
+          </p>
+        )}
+
+        <input
+          type="text"
+          {...register("motadai", { required: true, minLength: 6 })}
+          placeholder="Mô tả dài"
+          className="p-3"
+        />
+        {errors.motadai && (
+          <p className="text-red-600 text-[12px]">
+            không được để trống và nhỏ hơn 6 ký tự
+          </p>
+        )}
+        <input
+          type="text"
           {...register("price", { required: true, pattern: /^\d*$/ })}
           placeholder="Giá sản phẩm"
           className="p-3"

@@ -1,15 +1,20 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
+  const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
 
   const handleSearch = (event: React.FormEvent) => {
     event.preventDefault();
     if (keyword.trim()) {
       navigate(`/search?keyword=${encodeURIComponent(keyword.trim())}`);
     }
+  };
+
+  const toggleAccountMenu = () => {
+    setIsAccountMenuOpen(!isAccountMenuOpen);
   };
 
   return (
@@ -34,16 +39,34 @@ const Header = () => {
         {/* EN, Account, and Cart */}
         <div className="flex space-x-4 items-center text-white">
           <div className="flex items-center space-x-2">
-            <a href="#">En</a>
+            <a href="#">Ngôn ngữ</a>
             <i className="fa-solid fa-chevron-down text-xs ml-2"></i>
           </div>
-          <a href="#" className="flex items-center">
-            <i className="fa-regular fa-user"></i>
-            <span className="ml-1 hidden lg:inline">Account</span>
-          </a>
+          <div className="relative">
+            <button onClick={toggleAccountMenu} className="flex items-center">
+              <i className="fa-regular fa-user"></i>
+              <span className="ml-1 hidden lg:inline">Tài khoản</span>
+            </button>
+            {isAccountMenuOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg z-20">
+                <Link
+                  to="/login"
+                  className="block px-4 py-2 text-sm hover:bg-gray-100"
+                >
+                  Đăng nhập
+                </Link>
+                <Link
+                  to="/register"
+                  className="block px-4 py-2 text-sm hover:bg-gray-100"
+                >
+                  Đăng ký
+                </Link>
+              </div>
+            )}
+          </div>
           <a href="#" className="flex items-center">
             <i className="fa-solid fa-cart-shopping"></i>
-            <span className="ml-1 hidden lg:inline">Cart</span>
+            <span className="ml-1 hidden lg:inline">Giỏ hàng</span>
           </a>
         </div>
       </div>
