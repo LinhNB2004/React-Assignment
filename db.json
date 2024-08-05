@@ -207,6 +207,11 @@
       "email": "linhlttph37534@fpt.edu.vn",
       "password": "$2a$10$oEu/TfTPjYSKKV2SMMMBMu0IXGakbbm4zjLufh4Bl9UH9PJL/hD/q",
       "id": 2
+    },
+    {
+      "email": "khanhcute@gmail.com",
+      "password": "$2a$10$RpSxZ6Wi5IJqBQ2.KwJ0ou7dGWZn5tbTaQqdV8Lh2LODpLE8ASvqS",
+      "id": 3
     }
   ]
 }
